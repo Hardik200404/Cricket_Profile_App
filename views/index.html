@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Profile App</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="url"],
+        input[type="number"],
+        textarea {
+            width: 95%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>Cricketer Profile Application</h4>
+        <form id="form" onsubmit="handle_submit(event)">
+            <label for="name">Name: </label>
+            <input id="name" name="name" type="text">
+
+            <label for="date">Date of Birth: </label>
+            <input id="date" name="date" type="date">
+
+            <label for="photo_url">Photo url: </label>
+            <input id="photo_url" name="photo_url" type="url">
+
+            <label for="Birthplace">Birthplace: </label>
+            <input id="Birthplace" name="Birthplace" type="text">
+
+            <label for="career">career: </label>
+            <textarea id="career" name="career" style="height:200px"></textarea>
+            
+            <label for="matches">Total matches: </label>
+            <input id="matches" name="matches" type="number" min="0">
+            
+            <label for="score">Total score: </label>
+            <input id="score" name="score" type="number" min="0">
+
+            <label for="fifties">Total fifties: </label>
+            <input id="fifties" name="fifties" type="number" min="0">
+
+            <label for="centuries">Total centuries: </label>
+            <input id="centuries" name="centuries" type="number" min="0">
+
+            <label for="wickets">Total wickets: </label>
+            <input id="wickets" name="wickets" type="number" min="0">
+
+            <label for="average">average: </label>
+            <input id="average" name="average" type="number" min="0">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <br><hr>
+    <form style="width: 50%; float: right;" onsubmit="handle_search(event)">
+        <label for="name">Search Player</label>
+        <input id="name" name="name" type="text">
+        <button type="submit">Search</button>
+    </form><br><br><br><br><br><br><hr>
+    <div id="dynamic"></div>
+</body>
+<script src="script.js"></script>
+</html>
